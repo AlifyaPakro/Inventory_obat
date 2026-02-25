@@ -36,9 +36,11 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
     <div class="card shadow mb-4 w-100">
                         <div class="card-header py-3 d-flex justify-content-between">
                             <h6 class="m-0 font-weight-bold text-primary">Data Obat</h6>
+                            <?php if($_SESSION['user']['level'] == 'admin'): ?>
                             <a href="index.php?page=tambah_obat" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                                            <i class="fa-solid fa-file-pen"></i>
+                                            Tambah Obat
                                         </a>
+                            <?php endif; ?>
                         </div>
                          <div class="card-body">
                             <div class="table-responsive ">
@@ -53,7 +55,9 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
                                         <th>Keterangan</th>
                                         <th>Kategori</th>
                                         <th>Kedeluarsa</th>
+                                        <?php if($_SESSION['user']['level'] == 'admin'): ?>
                                         <th>Action</th>
+                                        <?php endif; ?>
                                     </tr>
                                     <?php 
                                     while($t = mysqli_fetch_assoc($sql)):
@@ -75,22 +79,23 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
                                             $selisih = $today->diff($tgl_kedeluarsa)->days;
 
                                             if($today > $tgl_kedeluarsa){
-                                                echo 'Kedeluarsa <i class="fa-solid fa-triangle-exclamation"></i>';
+                                                echo 'Kedeluarsa <i class="fa-solid fa-triangle-exclamation text text-danger"></i>';
                                             }elseif($selisih <= 30){
-                                                echo $selisih, '<i class="fa-solid fa-circle-info"></i>';
+                                                echo $selisih, 'Hari <i class="fa-solid fa-circle-info text text-warning"></i>';
                                             }else{
                                                 echo 'Aman <i class="fa-solid fa-circle-check"></i>';
                                             }
                                             
                                             ?>
                                         </td>
+                                        <?php if($_SESSION['user']['level'] == 'admin'): ?>
                                         <td><a href="index.php?page=update_obat&id=<?= $t['id_obat']; ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                                            <i class="fa-solid fa-file-pen"></i>
+                                            <i class="fa-solid fa-file-pen"></i></a>
                                             <a href="index.php?page=hapus_obat&id=<?= $t['id_obat']; ?>" onclick="return confirm('Yakin ingin menghapus data ini?')" class="d-none d-sm-inline-block btn btn-sm btn-danger ml-2 shadow-sm">
                                             <i class="fa-solid fa-trash">
                                             </i>
-                                        </a>
                                         </a></td>
+                                        <?php endif; ?>
                                     </tr>
                                     <?php 
                                     endwhile;

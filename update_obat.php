@@ -118,7 +118,7 @@ if(isset($_POST['update'])){
                                     <form class="user" method="POST">
                                         <input type="hidden" name="id_obat" value="<?= $obat['id_obat']; ?>">
                                         <div class="form-group">
-                                            <input type="text" name="nama_obat" class="form-control"
+                                            <input type="text" name="nama_obat" class="form-control``"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 value="<?= $obat['nama_obat']; ?>">
                                         </div>
