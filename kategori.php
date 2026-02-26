@@ -57,7 +57,7 @@ $sql = mysqli_query($connect, 'SELECT * FROM kategori');
                                         <td><?= $t['nama_kategori']; ?></td>
                                         <td><?= $t['keterangan'] ?></td>
                                         <?php if($_SESSION['user']['level'] == 'admin'): ?>
-                                        <td><a href="index.php?page=update_kategori&id=<?= $t['id_kategori']; ?>" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm">
+                                        <td><a href="index.php?page=update_kategori&id=<?= $t['id_kategori']; ?>" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm">
                                             <i class="fa-solid fa-file-pen"></i></a>
                                             <a href="index.php?page=hapus_kategori&id=<?= $t['id_kategori']; ?>" onclick="return confirm('Yakin ingin menghapus data ini?')" class="d-none d-sm-inline-block btn btn-sm btn-danger ml-2 shadow-sm">
                                             <i class="fa-solid fa-trash">

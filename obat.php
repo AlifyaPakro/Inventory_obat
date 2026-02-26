@@ -83,13 +83,13 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
                                             }elseif($selisih <= 30){
                                                 echo $selisih, 'Hari <i class="fa-solid fa-circle-info text text-warning"></i>';
                                             }else{
-                                                echo 'Aman <i class="fa-solid fa-circle-check"></i>';
+                                                echo 'Aman <i class="fa-solid fa-circle-check text text-success"></i>';
                                             }
                                             
                                             ?>
                                         </td>
                                         <?php if($_SESSION['user']['level'] == 'admin'): ?>
-                                        <td><a href="index.php?page=update_obat&id=<?= $t['id_obat']; ?>" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm">
+                                        <td><a href="index.php?page=update_obat&id=<?= $t['id_obat']; ?>" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm">
                                             <i class="fa-solid fa-file-pen"></i></a>
                                             <a href="index.php?page=hapus_obat&id=<?= $t['id_obat']; ?>" onclick="return confirm('Yakin ingin menghapus data ini?')" class="d-none d-sm-inline-block btn btn-sm btn-danger ml-2 shadow-sm">
                                             <i class="fa-solid fa-trash">
