@@ -28,7 +28,7 @@ include 'koneksi.php';
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-danger">
 
     <div class="container">
 
@@ -58,7 +58,7 @@ include 'koneksi.php';
 
                                       if($cek > 0){
                                         $_SESSION['user']=mysqli_fetch_array($data);
-                                        echo '<script>alert("Selamat datang kembali");
+                                        echo '<script>
                                         location.href="index.php";</script>';
                                       }else{
                                         echo '<script>alert("maaf. username atau password salah");</script>';

@@ -51,6 +51,7 @@ if(isset($_POST['tambah'])){
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 <body>
+    
     <div class=" w-100 row justify-content-center">
     <div class="col-xl-6 col-lg-10 col-md-9">
 
@@ -105,9 +106,12 @@ if(isset($_POST['tambah'])){
                                             <?php endwhile; ?>
                                             </select>
                                         </div>
-                                        <button type="submit" name="tambah" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" name="tambah" class="btn btn-danger btn-user btn-block">
                                             Tambah Data
                                         </button>
+                                        <a href="?page=obat" class="btn btn-danger btn-user btn-block">
+                                            Back
+                                        </a>
                                 </div>
                             </div>
                         </div>

@@ -71,9 +71,12 @@ if(isset($_POST['update'])){
 </head>
 
 <body>
+    
 
     <div class="container">
-         
+         <a href="?page=obat" class="btn btn-danger btn-user btn-block w-25">
+             Back
+         </a>
 
         <!-- Outer Row -->
         <div class="row justify-content-center">
@@ -159,7 +162,7 @@ if(isset($_POST['update'])){
                                             <?php endwhile; ?>
                                             </select>
                                         </div>
-                                        <button type="submit" name="update" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" name="update" class="btn btn-danger btn-user btn-block">
                                             Update
                                         </button>
                                 </div>

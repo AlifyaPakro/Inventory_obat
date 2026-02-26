@@ -35,9 +35,9 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
     
     <div class="card shadow mb-4 w-100">
                         <div class="card-header py-3 d-flex justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Obat</h6>
+                            <h6 class="m-0 font-weight-bold text-danger">Data Obat</h6>
                             <?php if($_SESSION['user']['level'] == 'admin'): ?>
-                            <a href="index.php?page=tambah_obat" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                            <a href="index.php?page=tambah_obat" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">
                                             Tambah Obat
                                         </a>
                             <?php endif; ?>
@@ -89,7 +89,7 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
                                             ?>
                                         </td>
                                         <?php if($_SESSION['user']['level'] == 'admin'): ?>
-                                        <td><a href="index.php?page=update_obat&id=<?= $t['id_obat']; ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                        <td><a href="index.php?page=update_obat&id=<?= $t['id_obat']; ?>" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm">
                                             <i class="fa-solid fa-file-pen"></i></a>
                                             <a href="index.php?page=hapus_obat&id=<?= $t['id_obat']; ?>" onclick="return confirm('Yakin ingin menghapus data ini?')" class="d-none d-sm-inline-block btn btn-sm btn-danger ml-2 shadow-sm">
                                             <i class="fa-solid fa-trash">

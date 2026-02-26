@@ -39,18 +39,18 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
                     <div class="row">
 
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card border-left-danger shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
                                                 Obat</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?= mysqli_num_rows(mysqli_query($connect, 'SELECT * FROM obat')); ?></div>
                                         </div>
@@ -64,11 +64,11 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
 
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card border-left-danger shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
                                                 kategori</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?= mysqli_num_rows(mysqli_query($connect, 'SELECT * FROM kategori')); ?></div>
                                         </div>
@@ -82,11 +82,11 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
                         <?php if($_SESSION['user']['level'] == 'admin'): ?>
                         <!-- Pending Requests Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card border-left-danger shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
                                                 User</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?= mysqli_num_rows(mysqli_query($connect, 'SELECT * FROM user')); ?></div>
                                         </div>
@@ -100,11 +100,11 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
                         <?php endif; ?>
                         <?php if(isset($_SESSION['user']['level']) && in_array($_SESSION['user']['level'], ['admin', 'petugas'])): ?>
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card border-left-danger shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
                                                 Obat Kedeluarsa</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                 <?= $data_kedeluarsa  ?>
@@ -120,11 +120,11 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
                         <?php endif; ?>
                         <!-- Pending Requests Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card border-left-danger shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
                                                 Supplier</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?= mysqli_num_rows(mysqli_query($connect, 'SELECT * FROM supplier')); ?></div>
                                         </div>
@@ -137,11 +137,11 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
                         </div>
                         <!-- Pending Requests Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card border-left-danger shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
                                                 Stok masuk</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?= mysqli_num_rows(mysqli_query($connect, 'SELECT * FROM stok_masuk')); ?></div>
                                         </div>
@@ -154,11 +154,11 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
                         </div>
                         <!-- Pending Requests Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card border-left-danger shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
                                                 Stok Keluar</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?= mysqli_num_rows(mysqli_query($connect, 'SELECT * FROM stok_keluar')); ?></div>
                                         </div>
