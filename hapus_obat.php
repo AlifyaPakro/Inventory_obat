@@ -3,7 +3,6 @@
 include "koneksi.php";
 
 $id = $_GET['id'];
-$cek = mysqli_query($connect, "SELECT * FROM obat WHERE id_obat = '$id'");
 $delete = mysqli_query($connect, "DELETE FROM obat WHERE id_obat = '$id'");
 if($delete){
     echo "<script>

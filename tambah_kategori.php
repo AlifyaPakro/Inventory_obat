@@ -30,7 +30,7 @@ if(isset($_POST['tambah'])){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Inventory tambah obat</title>
+    <title>Inventory tambah kategori</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -53,11 +53,11 @@ if(isset($_POST['tambah'])){
                             <div class="col-lg-12">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Tambah Data Obat</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Tambah Data Kategori</h1>
                                     </div>
                                     <form class="user" method="POST">
                                         <div class="form-group">
-                                            <input type="text" name="nama_kategorit" class="form-control"
+                                            <input type="text" name="nama_kategori" class="form-control"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Nama Kategori">
                                         </div>

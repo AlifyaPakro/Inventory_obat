@@ -31,9 +31,9 @@ $sql = mysqli_query($connect, 'SELECT * FROM kategori');
     
     <div class="card shadow mb-4 w-100">
                         <div class="card-header py-3 d-flex justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-danger">Data Obat</h6>
+                            <h6 class="m-0 font-weight-bold text-danger">Data Kategori</h6>
                             <?php if($_SESSION['user']['level'] == 'admin'): ?>
-                            <a href="index.php?page=tambah_obat" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">
+                            <a href="index.php?page=tambah_kategori" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">
                                             Tambah
                                         </a>
                             <?php endif; ?>

@@ -71,7 +71,7 @@ if(!isset($_SESSION['user'])){
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="index.php?page=kategori" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="index.php?page=kategori"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa-solid fa-layer-group"></i>
                     <span>Kategori</span>
@@ -79,14 +79,14 @@ if(!isset($_SESSION['user'])){
             </li>
             <?php if(isset($_SESSION['user']['level']) && in_array($_SESSION['user']['level'], ['admin', 'petugas'])) : ?>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="index.php?page=stok_masuk" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="index.php?page=stok_masuk"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa-solid fa-chart-simple"></i>
                     <span>Stok Masuk</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="index.php?page=stok_keluar" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="index.php?page=stok_keluar"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa-solid fa-chart-simple"></i>
                     <span>Stok Keluar</span>
@@ -95,14 +95,14 @@ if(!isset($_SESSION['user'])){
             <?php endif; ?>
             <?php if($_SESSION['user']['level'] == 'admin'): ?>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="index.php?page=user" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="index.php?page=user"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa-solid fa-users"></i>
                     <span>User</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="index.php?page=suppiler" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="index.php?page=suppiler"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa-solid fa-hand-holding-dollar"></i>
                     <span>Suppiler</span>
@@ -111,7 +111,7 @@ if(!isset($_SESSION['user'])){
             <?php endif; ?> 
             
             <li class="nav-item">
-                <a class="nav-link collapsed" href="index.php?page=contact" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="index.php?page=contact"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa-solid fa-message"></i>
                     <span>Contact</span>

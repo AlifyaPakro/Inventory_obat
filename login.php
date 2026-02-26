@@ -28,7 +28,7 @@ include 'koneksi.php';
 
 </head>
 
-<body class="bg-gradient-danger">
+<body class="bgackground">
 
     <div class="container">
 
