@@ -29,7 +29,8 @@ if(!isset($_SESSION['user'])){
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css//costum.css"> 
+    <link rel="stylesheet" href="css//costum.css">
+    <link rel="shortcut icon" href="img/logo_fav.png" type="image/x-icon">
 
 </head>
 
@@ -43,8 +44,8 @@ if(!isset($_SESSION['user'])){
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon ">
+                    <img src="img/logo.jpg" alt="logo toko" width="60px" class="rounded-circle">
                 </div>
                 <div class="sidebar-brand-text mx-3">Inventory Obat</div>
             </a>
@@ -370,7 +371,7 @@ if(!isset($_SESSION['user'])){
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>&copy;2026 Infentory Obat Asrama</span>
                     </div>
                 </div>
             </footer>
