@@ -56,7 +56,7 @@ $query = mysqli_query($connect, "SELECT * FROM user");
                                         <td><?= $u['status']; ?></td>
                                         <td><?= $u['level']; ?></td>
                                         <td>
-                                            <a href="index.php?page=hapus_kategori&id=<?= $u['id_user']; ?>" onclick="return confirm('Yakin ingin menghapus data ini?')" class="d-none d-sm-inline-block btn btn-sm btn-danger ml-2 shadow-sm">
+                                            <a href="index.php?page=hapus_user&id=<?= $u['id_user']; ?>" onclick="return confirm('Yakin ingin menghapus data ini?')" class="d-none d-sm-inline-block btn btn-sm btn-danger ml-2 shadow-sm">
                                             <i class="fa-solid fa-trash">
                                             </i>
                                         </a></td>
