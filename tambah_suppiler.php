@@ -3,17 +3,18 @@
 include "koneksi.php";
 
 if(isset($_POST['tambah'])){
-    $nama_kategori = $_POST['nama_kategori'];
-    $keterangan = $_POST['keterangan'];
+    $nama = $_POST['nama'];
+    $email = $_POST['email'];
+    $no_handphone = $_POST['no_hp'];
 
-    if($nama_kategori == ''){
-        echo "<script>alert('Nama Kategori tidak boleh kosong');</script>";
+    if($nama == ''){
+        echo "<script>alert('Nama supplier tidak boleh kosong');</script>";
     }else{
-        $insert = mysqli_query($connect, "INSERT INTO kategori(nama_kategori, keterangan)
-        VALUES('$nama_kategori', '$keterangan')");
+        $insert = mysqli_query($connect, "INSERT INTO supplier(nama, email, no_hanphone)
+        VALUES('$nama', '$email', '$no_handphone')");
 
         if($insert){
-            echo "<script>alert('Data Berhasil Ditambahkan');window.location='?page=kategori';</script>";
+            echo "<script>alert('Data Berhasil Ditambahkan');window.location='?page=suppiler;'</script>";
         }else{
             echo "<script>alert('Data Gagal Ditambahkan');</script>";
         }
@@ -53,23 +54,28 @@ if(isset($_POST['tambah'])){
                             <div class="col-lg-12">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Tambah Data Kategori</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Tambah Data Supplier</h1>
                                     </div>
                                     <form class="user" method="POST">
                                         <div class="form-group">
-                                            <input type="text" name="nama_kategori" class="form-control"
+                                            <input type="text" name="nama" class="form-control"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Nama Kategori">
+                                                placeholder="Nama Supplier">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="keterangan" class="form-control"
+                                            <input type="text" name="email" class="form-control"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Keterangan">
+                                                placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="no_hp" class="form-control"
+                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                placeholder="No Handphone">
                                         </div>
                                         <button type="submit" name="tambah" class="btn btn-danger btn-user btn-block">
                                             Tambah Data
                                         </button>
-                                        <a href="?page=kategori" class="btn btn-danger btn-user btn-block">
+                                        <a href="?page=suppiler" class="btn btn-danger btn-user btn-block">
                                             Back
                                         </a>
                                 </div>

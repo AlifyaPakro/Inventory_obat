@@ -3,27 +3,29 @@
 include "koneksi.php";
 
 $id = $_GET['id'];
-$query = mysqli_query($connect, "SELECT * FROM kategori WHERE id_kategori = '$id'");
+$query = mysqli_query($connect, "SELECT * FROM supplier WHERE id_supplier = '$id'");
 $isi = mysqli_fetch_array($query);
 
 if(!isset($id)){
     echo "<script>alert('Id tidak ditemukan');
-    window.location='?page=kategori';</script>";
+    window.location='?page=suppiler';</script>";
 }
 
 if(isset($_POST['update'])){
-    $id_kategori = $_POST['id_kategori'];
-    $kategori = $_POST['nama_kategori'];
-    $keterangan1 = $_POST['keterangan'];
+    $id_supplier = $_POST['id_supplier'];
+    $nama = $_POST['nama'];
+    $email = $_POST['email'];
+    $no_handphone = $_POST['no_hp'];
 
-    $update = mysqli_query($connect, "UPDATE kategori SET
-    nama_kategori = '$kategori',
-    keterangan = '$keterangan1'
-    WHERE id_kategori = '$id_kategori'
+    $update = mysqli_query($connect, "UPDATE supplier SET
+    nama = '$nama',
+    email = '$email',
+    no_hanphone = '$no_handpohne'
+    WHERE id_supplier = '$id_supplier'
     ");
     if($update){
-        echo "<script>alert('Data Kategori Berhasil Diupdate');
-        window.location='?page=kategori';</script>";
+        echo "<script>alert('Supplier Berhasil Diupdate');
+        window.location='?page=suppiler';</script>";
     }else{
         echo "<script>alert('Data Kategori Gagal Diupdate');</script>";
     }
@@ -77,16 +79,22 @@ if(isset($_POST['update'])){
                                         <h1 class="h4 text-gray-900 mb-4">Edit</h1>
                                     </div>
                                     <form class="user" method="POST">
-                                        <input type="hidden" name="id_kategori" value="<?= $isi['id_kategori']; ?>">
+                                        <input type="hidden" name="id_supplier" value="<?= $isi['id_supplier']; ?>">
                                         <div class="form-group">
-                                            <input type="text" name="nama_kategori" class="form-control"
+                                            <input type="text" name="nama" class="form-control"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                value="<?= $isi['nama_kategori']; ?>">
+                                                value="<?= $isi['nama']; ?>">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="keterangan" class="form-control mb-3"
+                                            <input type="text" name="email" class="form-control mb-3"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                value="<?= $isi['keterangan']; ?>">
+                                                value="<?= $isi['email']; ?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="no_hp" class="form-control mb-3"
+                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                value="<?= $isi['no_hanphone']; ?>">
+                                        </div>
                                         <button type="submit" name="update" class="btn btn-danger btn-user btn-block">
                                             Update
                                         </button>

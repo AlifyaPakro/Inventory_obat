@@ -32,7 +32,7 @@ $query = mysqli_query($connect, "SELECT * FROM supplier");
     <div class="card shadow mb-4 w-100">
                         <div class="card-header py-3 d-flex justify-content-between">
                             <h6 class="m-0 font-weight-bold text-danger">Data Supplier  </h6>
-                            <a href="index.php?page=tambah_kategori" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">
+                            <a href="index.php?page=tambah_suppiler" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">
                                 Tambah
                             </a>
                         </div>
@@ -55,9 +55,9 @@ $query = mysqli_query($connect, "SELECT * FROM supplier");
                                         <td><?= $s['email']; ?></td>
                                         <td><?= $s['no_hanphone']; ?></td>
                                         <td>
-                                            <a href="index.php?page=update_kategori&id=<?= $s['id_supplier']; ?>" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm">
+                                            <a href="index.php?page=update_suppiler&id=<?= $s['id_supplier']; ?>" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm">
                                             <i class="fa-solid fa-file-pen"></i></a>
-                                            <a href="index.php?page=hapus_kategori&id=<?= $s['id_supplier']; ?>" onclick="return confirm('Yakin ingin menghapus data ini?')" class="d-none d-sm-inline-block btn btn-sm btn-danger ml-2 shadow-sm">
+                                            <a href="index.php?page=hapus_suppiler&id=<?= $s['id_supplier']; ?>" onclick="return confirm('Yakin ingin menghapus data ini?')" class="d-none d-sm-inline-block btn btn-sm btn-danger ml-2 shadow-sm">
                                             <i class="fa-solid fa-trash">
                                             </i>
                                         </a></td>
