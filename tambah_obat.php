@@ -1,7 +1,5 @@
 <?php
 
-use Dom\Mysql;
-
 include "koneksi.php";
 
 $kategori_drop = mysqli_query($connect, "SELECT * FROM kategori");
@@ -112,6 +110,7 @@ if(isset($_POST['tambah'])){
                                         <a href="?page=obat" class="btn btn-danger btn-user btn-block">
                                             Back
                                         </a>
+                                    </form>
                                 </div>
                             </div>
                         </div>

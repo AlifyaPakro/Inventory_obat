@@ -2,21 +2,26 @@
 
 include "koneksi.php";
 
-if(isset($_POST['tambah'])){
-    $nama = $_POST['nama'];
-    $email = $_POST['email'];
-    $no_handphone = $_POST['no_hp'];
+$obat = mysqli_query($connect, "SELECT * FROM obat");
+$user = mysqli_query($connect, "SELECT * FROM user");
 
-    if($nama == ''){
-        echo "<script>alert('Nama supplier tidak boleh kosong');</script>";
+if(isset($_POST['tambah'])){
+    $jumlah = $_POST['jumlah'];
+    $tanggal = $_POST['tanggal'];
+    $keterangan = $_POST['keterangan'];
+    $id_user = $_POST['id_user'];
+    $id_obat = $_POST['id_obat'];
+
+    if($id_obat == ''){
+        echo "<script>alert('Data ini tidak boleh kosong');window.location='?page=tambah_masuk';</script>";
     }else{
-        $insert = mysqli_query($connect, "INSERT INTO supplier(nama, email, no_hanphone)
-        VALUES('$nama', '$email', '$no_handphone')");
+        $insert = mysqli_query($connect, "INSERT INTO stok_keluar(jumlah, tanggal, keterangan, id_user, id_obat)
+        VALUES('$jumlah', '$tanggal', '$keterangan', '$id_user', '$id_obat')");
 
         if($insert){
-            echo "<script>alert('Data Berhasil Ditambahkan');window.location='?page=suppiler'</script>";
+            echo "<script>alert('Data berhasil ditambahkan');window.location='?page=stok_keluar';</script>";
         }else{
-            echo "<script>alert('Data Gagal Ditambahkan');</script>";
+            echo "<script>alert('Data gagal ditambahkan');window.location='?page=stok_keluar';</script>";
         }
     }
 }
@@ -31,7 +36,7 @@ if(isset($_POST['tambah'])){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Inventory tambah kategori</title>
+    <title>Inventory</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -54,28 +59,42 @@ if(isset($_POST['tambah'])){
                             <div class="col-lg-12">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Tambah Data Supplier</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Stok Keluar</h1>
                                     </div>
                                     <form class="user" method="POST">
                                         <div class="form-group">
-                                            <input type="text" name="nama" class="form-control"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Nama Supplier">
+                                            <select name="id_obat" class="form-control">
+<option value="">Pilih Obat</option>
+<?php while($o = mysqli_fetch_assoc($obat)): ?>
+<option value="<?= $o['id_obat']; ?>">
+<?= $o['nama_obat']; ?>
+</option>
+<?php endwhile; ?>
+</select>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="email" class="form-control"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Email">
+                                            <input type="number" name="jumlah" class="form-control" placeholder="Jumlah keluar">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="no_hp" class="form-control"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="No Handphone">
+                                            <input type="date" name="tanggal" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="keterangan" class="form-control" placeholder="Keterangan">
+                                        </div>
+                                        <div class="form-group">
+                                            <select name="id_user" class="form-control">
+<option value="">Pilih User</option>
+<?php while($u = mysqli_fetch_assoc($user)): ?>
+<option value="<?= $u['id_user']; ?>">
+<?= $u['username']; ?>
+</option>
+<?php endwhile; ?>
+</select>
                                         </div>
                                         <button type="submit" name="tambah" class="btn btn-danger btn-user btn-block">
                                             Tambah Data
                                         </button>
-                                        <a href="?page=suppiler" class="btn btn-danger btn-user btn-block">
+                                        <a href="?page=stok_keluar" class="btn btn-danger btn-user btn-block">
                                             Back
                                         </a>
                                 </div>
