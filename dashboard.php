@@ -45,7 +45,7 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
                     <div class="row">
 
                         <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div id="cardme1" class="col-xl-3 col-md-6 mb-4" >
                             <div class="card border-left-danger shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -63,7 +63,7 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
                         </div>
 
                         <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div id="cardme2" class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-danger shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -81,7 +81,7 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
                         </div>
                         <?php if($_SESSION['user']['level'] == 'admin'): ?>
                         <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div id="cardme3" class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-danger shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -99,7 +99,7 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
                         </div>
                         <?php endif; ?>
                         <?php if(isset($_SESSION['user']['level']) && in_array($_SESSION['user']['level'], ['admin', 'petugas'])): ?>
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div id="cardme4" class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-danger shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -119,7 +119,7 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
                         </div>
                         <?php endif; ?>
                         <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div id="cardme5" class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-danger shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -136,7 +136,7 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
                             </div>
                         </div>
                         <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div id="cardme6" class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-danger shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -153,7 +153,7 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
                             </div>
                         </div>
                         <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div id="cardme7" class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-danger shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -173,9 +173,6 @@ $data_kedeluarsa = $data['tanggal_kedeluarsa'];
                         
                     </div>
                 </div>
-
-
-                
     
 </body>
 </html>

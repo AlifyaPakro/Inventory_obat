@@ -54,8 +54,8 @@ if(!isset($_SESSION['user'])){
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.php">
+            <li class="nav-item active" id="nav-item" onclick="navbar()">
+                <a class="nav-link" href="index.php?page=dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -64,7 +64,7 @@ if(!isset($_SESSION['user'])){
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Nav Item - Pages Collapse Menu -->
-             <li class="nav-item">
+             <li class="nav-item" >
                 <a class="nav-link collapsed" href="index.php?page=obat"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa-solid fa-capsules"></i>
@@ -277,7 +277,7 @@ if(!isset($_SESSION['user'])){
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="logout.php">Logout</a>
+                    <a class="btn btn-danger" href="logout.php">Logout</a>
                 </div>
             </div>
         </div>
@@ -300,6 +300,15 @@ if(!isset($_SESSION['user'])){
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
     <script src="js/jscript.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        const nav = document.getElementById("nav-item");
+        function navbar(){
+            nav.style.backgroundColor = "gray";
+            nav.style.color = "white";
+        }
+    </script>
+    
 
 </body>
 

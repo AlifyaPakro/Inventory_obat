@@ -83,7 +83,7 @@ include 'koneksi.php';
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <button href="index.html" name="login" class="btn btn-secondary btn-user btn-block">
+                                        <button href="index.html" name="login" class="btn btn-danger btn-user btn-block">
                                             Login
                                         </button>
                                         <hr>

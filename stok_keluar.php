@@ -33,7 +33,7 @@ $sql = mysqli_query($connect, 'SELECT * FROM stok_keluar');
                         <div class="card-header py-3 d-flex justify-content-between">
                             <h6 class="m-0 font-weight-bold text-danger">Data Obat Keluar</h6>
                             <div class="">
-                                <a href="index.php?page=tambah_keluar" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">Tambah Data</a>
+                                <a href="index.php?page=tambah_keluar" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">Tambah Data Keluar</a>
                                 <a href="" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">Print</a>
                             </div>
                         </div>
