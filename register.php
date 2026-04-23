@@ -1,3 +1,48 @@
+<?php
+
+include "koneksi.php";
+
+$sql = mysqli_query($connect, "SELECT * FROM user");
+
+if(isset($_POST['tambah'])){
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $status = $_POST['status'];
+    $level = $_POST['level'];
+    $no_hp = $_POST['no_hp'];
+    $password = $_POST['password'];
+    $password1 = $_POST['password1'];
+
+    if($username == ""){
+        echo "<script>alert('Username tidak boleh kosong');</script>";
+    }else{
+        if($password == $password1){
+            $pw = md5($password);
+            $query = mysqli_query($connect, "INSERT INTO user(username, email, status, level, password, no_hanphone)
+            VALUES('$username','$email', '$status', '$level', '$pw', '$no_hp' )");
+
+            if($query){
+                echo "<script>alert('Berhasil Registrasi');window.location='login.php';</script>";
+            }else{
+                echo "<script>alert('Gagal Registrasi');</script>";
+            }
+        }else{
+            echo "<script>alert('Masukkan Password yang sama');</script>";
+        } 
+    }
+}
+$level = mysqli_query($connect, "SHOW COLUMNS FROM user LIKE 'level'");
+$l = mysqli_fetch_assoc($level);
+preg_match("/^enum\(\'(.*)\'\)$/", $l['Type'], $matches);
+$enum1 = explode("','", $matches[1]);
+
+$status = mysqli_query($connect, "SHOW COLUMNS FROM user LIKE 'status'");
+$s = mysqli_fetch_assoc($status);
+preg_match("/^enum\(\'(.*)\'\)$/", $s['Type'], $matche);
+$enum2 = explode("','", $matche[1]);
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,62 +67,78 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="">
 
     <div class="container">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-0">
+            <div class=" p-0">
                 <!-- Nested Row within Card Body -->
-                <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                <div class="row justify-content-center">
+                    <div class=""></div>
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user">
+                            <form class="user" method="POST">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="First Name">
+                                        <input type="text" name="username" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="username">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Last Name">
+                                        <input type="email" name="email" class="form-control form-control-user" id="exampleLastName"
+                                            placeholder="email">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email Address">
+                                <div class="col-sm-15 mb-3  mb-sm-3">
+                                        <select type="text" name="status" class="form-control" id="exampleLastName"
+                                            placeholder="status">
+                                            <option value="">pilih status</option>
+                                            <?php 
+                                            foreach($enum2 as $e2):
+                                            ?>
+                                            <option value="<?php echo $e2 ?>"><?php echo $e2 ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                </div>
+                                <div class="col-sm-15  mb-sm-3">
+                                        <input type="text" name="no_hp" class="form-control"
+                                            id="exampleRepeatPassword" placeholder="no handphone">
+                                </div>
+                                <div class="col-sm-15   mb-sm-3">
+                                        <select type="text" name="level" class="form-control" id="exampleFirstName"
+                                            placeholder="level">
+                                            <option value="">pilih level</option>
+                                            <?php 
+                                            foreach($enum1 as $e1):
+                                            ?>
+                                            <option value="<?php echo $e1 ?>"><?php echo $e1 ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
+                                        <input type="password" name="password1" class="form-control form-control-user"
                                             id="exampleInputPassword" placeholder="Password">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
+                                        <input type="password" name="password" class="form-control form-control-user"
                                             id="exampleRepeatPassword" placeholder="Repeat Password">
                                     </div>
                                 </div>
-                                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                <button name="tambah" class="btn btn-danger btn-user btn-block">
                                     Register Account
-                                </a>
+                                </button>
                                 <hr>
-                                <a href="index.html" class="btn btn-google btn-user btn-block">
-                                    <i class="fab fa-google fa-fw"></i> Register with Google
-                                </a>
-                                <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                                </a>
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                <a class="small" href="forgot-password.php">Forgot Password?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="login.html">Already have an account? Login!</a>
+                                <a class="small" href="login.php">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>

@@ -1,14 +1,30 @@
 <?php
 include 'koneksi.php';
 
-if(isset($_POST['kirim'])){
-    $email = $_POST['email'];
+$email = $_GET['email'] ?? '';
 
-    $cek = mysqli_query($connect, "SELECT * FROM user WHERE email='$email'");
-    if(mysqli_num_rows($cek) == 0){
-        echo "<script>alert('Email tidak ditemukan')</script>";
+if(isset($_POST['reset'])){
+
+    $password = $_POST['password'];
+    $password1 = $_POST['password1'];
+
+    if(empty($password) || empty($password1)){
+        echo "<script>alert('Password tidak boleh kosong');</script>";
+    }elseif($password != $password1){
+        echo "<script>alert('Password tidak sama');</script>";
     }else{
-        echo "<script>window.location='reset_password.php?email=$email';</script>";
+
+        $pw = md5($password);
+
+        $query = mysqli_query($connect, "UPDATE user SET password='$pw'
+            WHERE email='$email'
+        ");
+
+        if($query){
+            echo "<script>alert('Password berhasil diubah');window.location='login.php';</script>";
+        }else{
+            echo "<script>alert('Gagal update');</script>";
+        }
     }
 }
 ?>
@@ -58,21 +74,19 @@ if(isset($_POST['kirim'])){
                                     </div>
                                     <form class="user" method="POST">
                                         <div class="form-group">
-                                            <input type="email" name="email" class="form-control form-control-user"
+                                            <input type="password" name="password1" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                                placeholder="New password">
                                         </div>
-                                        <button type="submit" name="kirim" class="btn btn-danger btn-user btn-block">
+                                        <div class="form-group">
+                                            <input type="password" name="password" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                placeholder="Enter password">
+                                        </div>
+                                        <button type="submit" name="reset" class="btn btn-danger btn-user btn-block">
                                             Reset Password
                                         </button>
                                     </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="register.php">Create an Account!</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="login.php">Already have an account? Login!</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
