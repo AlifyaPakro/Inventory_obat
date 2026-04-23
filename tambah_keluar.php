@@ -19,7 +19,7 @@ if(isset($_POST['tambah'])){
         VALUES('$jumlah', '$tanggal', '$keterangan', '$id_user', '$id_obat')");
 
         if($insert){
-            echo "<script>alert('Data berhasil ditambahkan');window.location='?page=stok_keluar';</script>";
+            echo "<script>alert('Data pengeluaran berhasil ditambahkan');window.location='?page=obat';</script>";
         }else{
             echo "<script>alert('Data gagal ditambahkan');window.location='?page=stok_keluar';</script>";
         }

@@ -131,7 +131,7 @@ if(isset($_POST['update'])){
                                                 value="<?= $obat['harga']; ?>">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="stok" class="form-control"
+                                            <input type="number" name="stok" class="form-control"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 value="<?= $obat['stok']; ?>">
                                         </div>
@@ -141,7 +141,7 @@ if(isset($_POST['update'])){
                                                 value="<?= $obat['satuan']; ?>">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="tanggal_kedeluarsa" class="form-control"
+                                            <input type="date" name="tanggal_kedeluarsa" class="form-control"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 value="<?= $obat['tanggal_kedeluarsa']; ?>">
                                         </div>

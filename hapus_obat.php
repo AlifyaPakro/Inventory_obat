@@ -12,7 +12,7 @@ if($delete){
 }else{
     echo "<script>
     alert('Data gagal dihapus');
-    window.location='index.php?page=obat';
+    window.location='index.php?page=tambah_keluar';
     </script>";
 }
 

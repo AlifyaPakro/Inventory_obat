@@ -14,13 +14,15 @@ if(isset($_POST['tambah'])){
     $id_kategori = $_POST['id_kategori'];
 
     if($nama_obat == ''){
-        echo "<script>alert('Data ini tidak boleh kosong');window.location='?page=tambah_obat';</script>";
+        echo "<script>alert('nama tidak boleh kosong');window.location='?page=tambah_obat';</script>";
+    }elseif($id_kategori == ''){
+        echo "<script>alert('kategori tidak boleh kosong');window.location='?page=tambah_obat';</script>";
     }else{
         $insert = mysqli_query($connect, "INSERT INTO obat(nama_obat, harga, stok, satuan, tanggal_kedeluarsa, keterangan, id_kategori)
         VALUES('$nama_obat', '$harga', '$stok', '$satuan', '$tanggal_kedeluarsa', '$keterangan', '$id_kategori')");
 
         if($insert){
-            echo "<script>alert('Data berhasil ditambahkan');window.location='?page=obat';</script>";
+            echo "<script>alert('Data berhasil ditambahkan');window.location='?page=tambah_masuk';</script>";
         }else{
             echo "<script>alert('Data gagal ditambahkan');window.location='?page=obat';</script>";
         }
@@ -74,7 +76,7 @@ if(isset($_POST['tambah'])){
                                                 placeholder="masukan harga">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="stok" class="form-control"
+                                            <input type="number" name="stok" class="form-control"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="masukan stok">
                                         </div>
@@ -84,7 +86,7 @@ if(isset($_POST['tambah'])){
                                                 placeholder="masukan satuan">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="tanggal_kedeluarsa" class="form-control"
+                                            <input type="date" name="tanggal_kedeluarsa" class="form-control"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="masukan tanggal kedeluarsa">
                                         </div>
