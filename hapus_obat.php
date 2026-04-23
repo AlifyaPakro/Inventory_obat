@@ -7,12 +7,12 @@ $delete = mysqli_query($connect, "DELETE FROM obat WHERE id_obat = '$id'");
 if($delete){
     echo "<script>
     alert('Data berhasil dihapus');
-    window.location='index.php?page=obat';
+    window.location='index.php?page=tambah_keluar';
     </script>";
 }else{
     echo "<script>
     alert('Data gagal dihapus');
-    window.location='index.php?page=tambah_keluar';
+    window.location='index.php?page=obat';
     </script>";
 }
 
